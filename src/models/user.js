@@ -10,12 +10,6 @@ const userSchema=new mongoose.Schema(
     required:true,
     },
     password:String,
-
-    address:{
-        state:String,
-        city:String,
-    },
-
     gender:{
         type:String,
         enum:["male","female","other"],
