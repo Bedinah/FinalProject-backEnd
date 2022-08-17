@@ -9,6 +9,7 @@ const userSchema=new mongoose.Schema(
     unique:true,
     required:true,
     },
+    video:String,
     password:String,
     gender:{
         type:String,
