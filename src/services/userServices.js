@@ -24,6 +24,11 @@ static async deleteUser(req){
 }
 
 
+static async getOneUser(req) {
+    const user = await UserModel.findById({ _id:req.params.id}, req.body);
+
+    return user;
+  }
 
 }
 export default UserServiceS;
