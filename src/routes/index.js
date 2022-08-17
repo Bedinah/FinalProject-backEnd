@@ -9,5 +9,5 @@ route.post("/user/login",UserController.loginUserController);
 route.post("/user/create",UserController.registerUser);
 route.get("/user/getAll",UserController.getAll);
 route.delete("/user/:id",UserController.deleteUser);
-route.post("/user/:id",verifytoken,verifyacess("admin"),UserController.updatevideo);
+
 export default route;

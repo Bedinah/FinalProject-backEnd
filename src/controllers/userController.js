@@ -61,18 +61,7 @@ class UserController{
       data:newUser,
     });
   }
-  static async updatevideo(req,res){
-    const newUser = await UserServiceS.updatevideo(req);
-    if(!newUser){
-      return res.status(401).json({
-        message:"failed to updatevideo"
-      })
-    }
-    return res.status(201).json({
-      message:"success",
-      data:newUser,
-    });
-  }
+ 
 
 
 }
