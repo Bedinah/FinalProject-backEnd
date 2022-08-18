@@ -1,6 +1,9 @@
 import UserServiceS from "../services/userServices";
 import handlePassword from "../utils/handlePassword";
 import TokenAuth from "../utils/Token";
+import Response from "../utils/response";
+
+
 class UserController {
   //login controllers
   static async loginUserController(req, res) {
@@ -60,17 +63,12 @@ class UserController {
       data: newUser,
     });
   }
-  static async updateUser(req, res) {
-    const newUser = await UserServiceS.updateUser(req);
-    if (!newUser) {
-      return res.status(401).json({
-        message: "failed to updateUser",
-      });
+  static async getOneUser(req,res){
+    const user = await UserServiceS.getOneUser(req)
+    if (!user){
+        return Response.errorMessage(res,"User not found",400)
     }
-    return res.status(201).json({
-      message: "success",
-      data: newUser,
-    });
-  }
+    return Response.successMessage(res, "Here is User",user,200)
+}
 }
 export default UserController;

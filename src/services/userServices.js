@@ -22,11 +22,11 @@ static async deleteUser(req){
     const user = await UserModel.deleteOne({_id:req.params.id});
     return user;
 }
-static async updateUser(req){
-    await UserModel.findOneAndUpdate({_id:req.params.id},req.body);
-    const user = await UserModel.findOne({_id:req.params.id});
+static async getOneUser(req) {
+    const user = await UserModel.findById({ _id:req.params.id}, req.body);
+
     return user;
-}
+  }
 
 
 }
