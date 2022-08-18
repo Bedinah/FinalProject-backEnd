@@ -22,12 +22,12 @@ static async deleteUser(req){
     const user = await UserModel.deleteOne({_id:req.params.id});
     return user;
 }
+
 static async getOneUser(req) {
     const user = await UserModel.findById({ _id:req.params.id}, req.body);
 
     return user;
   }
-
 
 }
 export default UserServiceS;
