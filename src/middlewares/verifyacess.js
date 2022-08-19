@@ -1,9 +1,8 @@
 import Response from "../utils/response";
-const verifyAccess= function(requiredRole){
+const VerifyAccess= function(requiredRole){
     return async (req,res,next)=>{
         try{
 
-            //const{role:role}=req.user:
             const role=req.user.role;
             if(requiredRole!==role){
                 return Response.errorMessage(res,"you are not authorized",403);
@@ -14,4 +13,4 @@ const verifyAccess= function(requiredRole){
         }
     }
 }
-export default verifyAccess
+export default VerifyAccess
