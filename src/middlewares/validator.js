@@ -1,5 +1,4 @@
 import { check, validationResult } from "express-validator";
-// import User from "../models/userModel"
 
 class Validator {
   static validateInput = (req, res, next) => {
@@ -24,12 +23,12 @@ class Validator {
         "lastName",
         "please your lastName have a special character"
       ).isAlpha(),
-      // check("phone","your phone number is invalid").isMobilePhone(),
+
       check("password", "password must be Strong").isStrongPassword(),
     ];
   }
   static checkId() {
-    return [check("id", "id should be mongoId").isMongoId,
-  ]}
+    return [check("id", "id should be mongoId").isMongoId];
+  }
 }
 export default Validator;

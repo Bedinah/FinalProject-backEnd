@@ -17,8 +17,7 @@ class UserController {
       const token = TokenAuth.generateToken({
         phone: user.phone,
         email: user.email,
-        picture: user.picture,
-        names: user.names,
+        names: user.firstName,
         role: user.role,
       });
       return res.status(200).json({
