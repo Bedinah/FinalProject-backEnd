@@ -1,25 +1,19 @@
 import homeServices from "../services/homepageServices";
-
-// import TokenAuth from "../utils/Token";
- import Response from "../utils/response";
+import Response from "../utils/response";
 
 
 class homeController {
   
 
   //register user
-  static async Uploadhomepage(req, res) {
-    const Newhomepage = await homeServices.homepageUpload(req);
-    if (!Newhomepage) {
-      return res.status(401).json({
-        message: "failed to upload",
-      });
+  static async updateHome(req,res){
+    const newHomepage = await homeServices.updateHome(req)
+    if (!newHomepage){
+        return res.status(400).json({message:"failed to update Homepage",});
     }
-    return res.status(201).json({
-      message: "success",
-      data: Newhomepage,
-    });
-  }
+    return res.status(201).json({message:"success",data: newHomepage});
+}
+
   static async getAll(req, res) {
     const Newhomepage = await homeServices.getAll();
     if (!Newhomepage) {
@@ -28,7 +22,7 @@ class homeController {
     return res.status(200).json({ message: "success", data: Newhomepage });
   }
   static async deletehomepage(req, res) {
-    const newUser = await homepageServices.deletehomepage(req);
+    const newUser = await homeServices.deletehomepage(req);
     if (!Newhomepage) {
       return res.status(401).json({
         message: "failed to deletehomepage",
