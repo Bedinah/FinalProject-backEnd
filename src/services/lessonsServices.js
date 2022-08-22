@@ -2,12 +2,23 @@ import LessonsModel from "../models/Lessons"
 
 class lessonsServices{
   
-//registering lessons
-static async lessonsUpload(req){
-  
-    const lessons = await LessonsModel.upload(req.body);
-    return lessons;
-}
+//creating lessons
+static async LessonsCreate(req){
+    
+      const Lessons = await LessonsModel.create(req.body);
+      return Lessons;
+  }
+  static async updateLessons(req) {
+    await LessonsModel.findOneAndUpdate({ _id: req.params.id }, req.body);
+    const Lessons = await LessonsModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    return Lessons;
+  }
 static async getAll(req){
 
     const lessons = await LessonsModel.find();
