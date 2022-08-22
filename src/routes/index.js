@@ -20,15 +20,20 @@ route.post(
   Datacheker.validateEmailDuplication,
   UserController.registerUser
 );
-
-route.post("/homepage/update", homeController.updateHome);
+route.post("/homepage/create", homeController.createHome);
+route.post("/nutrition/create", nutritionController.createNutrition);
+route.patch("/home/:id", homeController.updateHome);
 route.post("/lesson/upload", lessonsController.Uploadlessons);
-route.post("/nutrition/upload", nutritionController.Uploadnutrition);
+route.post("/nutrition/:id", nutritionController.updateNutrition);
 
 route.get("/user/getAll", UserController.getAll);
 route.get("/nutrition/getAll", nutritionController.getAll);
 route.get("/lesson/getAll", lessonsController.getAll);
 route.get("/home/getAll", homeController.getAll);
+
+route.get("/home/:id", homeController.getOnehomepage);
+
+route.delete("/home/:id", homeController.deleteHomepage);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
 route.delete(
