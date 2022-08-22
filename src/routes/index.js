@@ -33,6 +33,7 @@ route.get("/home/getAll", homeController.getAll);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
 route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
+route.delete("/Lessons/deleteOne/:id", lessonsController.deletelessons);
 
 route.delete(
   "/user/:id",
@@ -42,14 +43,7 @@ route.delete(
 );
 
 
-route.get("/user/getOne/:id",UserController.getOneUser);
-route.delete("/user/:id" ,Validator.checkId(), Validator.validateInput,UserController);
 
-//Homepages
-
-//Nutrition
-
-//lessons
 
 export default route;
 
