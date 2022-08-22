@@ -12,19 +12,27 @@ const route = Router();
 
 route.post("/user/login", UserController.loginUserController);
 
-route.post(
-  "/user/create",
+route.post( "/user/create",
 
   Validator.newAccountRules(),
   Validator.validateInput,
   Datacheker.validateEmailDuplication,
   UserController.registerUser
 );
+
 route.post("/homepage/create", homeController.createHome);
 route.post("/nutrition/create", nutritionController.createNutrition);
 route.patch("/home/:id", homeController.updateHome);
-route.post("/lesson/upload", lessonsController.Uploadlessons);
+
 route.post("/nutrition/:id", nutritionController.updateNutrition);
+
+
+route.post("/lessons/create", lessonsController.LessonsCreate);
+
+route.patch("/homepage/update", homeController.updateHome);
+route.patch("/lesson/update/:id", lessonsController.updateLessons);
+
+
 
 route.get("/user/getAll", UserController.getAll);
 route.get("/nutrition/getAll", nutritionController.getAll);
@@ -36,6 +44,8 @@ route.get("/home/:id", homeController.getOnehomepage);
 route.delete("/home/:id", homeController.deleteHomepage);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
+route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
+
 route.delete(
   "/user/:id",
   Validator.checkId(),
@@ -43,4 +53,6 @@ route.delete(
   UserController
 );
 
+
 export default route;
+

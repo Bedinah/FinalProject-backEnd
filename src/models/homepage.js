@@ -7,6 +7,7 @@ const homepageSchema=new mongoose.Schema(
     title:String,
     discription:String,
     
+
     isActive:{
         type:Boolean,
         default:true,
