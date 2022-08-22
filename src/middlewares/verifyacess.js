@@ -1,5 +1,5 @@
 import Response from "../utils/response";
-const verifyAccess= function(requiredRole){
+const VerifyAccess= function(requiredRole){
     return async (req,res,next)=>{
         try{
 
@@ -14,4 +14,4 @@ const verifyAccess= function(requiredRole){
         }
     }
 }
-export default verifyAccess
+export default VerifyAccess
