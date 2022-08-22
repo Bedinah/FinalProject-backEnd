@@ -20,8 +20,7 @@ class nutritionController {
     );
   }
 
-
-  static async updateNutrition(req, res) {
+static async updateNutrition(req, res) {
     const newNutrition = await nutritionServices.updateNutrition(req);
     if (!newNutrition) {
       return res.status(400).json({ message: "failed to update this page" });
@@ -50,7 +49,7 @@ class nutritionController {
 
   static async getOnenutrition(req,res){
     const nutrition = await nutritionServices.getOnenutrition(req)
-    if (!newNutrition){
+    if (!nutrition){
         return Response.errorMessage(res,"nutrition not found",400)
     }
     return Response.successMessage(res, "Here is nutrition",nutrition,200)
