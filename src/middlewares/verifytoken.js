@@ -7,15 +7,19 @@ const VerifyToken = async(req, res, next) =>{
         return Response.errorMessage(res, "No token provide",404)
     }
 
+
     try{
         const user = TokenAuth.getDataFromToken(token);
         req.user = user;
         return next();
     }
 
+
     catch(err){
         console.log("<><><><><><><", err);
     }
 
 }
-export default VerifyToken
+
+export default VerifyToken;
+

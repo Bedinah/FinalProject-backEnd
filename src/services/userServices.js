@@ -23,6 +23,7 @@ static async deleteUser(req){
     return user;
 }
 
+
 static async getOneUser(req) {
     const user = await UserModel.findById({ _id:req.params.id}, req.body);
 

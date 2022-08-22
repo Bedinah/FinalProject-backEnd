@@ -62,12 +62,14 @@ class UserController {
       data: newUser,
     });
   }
+
   static async getOneUser(req,res){
     const user = await UserServiceS.getOneUser(req)
     if (!user){
         return Response.errorMessage(res,"User not found",400)
     }
     return Response.successMessage(res, "Here is User",user,200)
+
 }
 }
 export default UserController;
