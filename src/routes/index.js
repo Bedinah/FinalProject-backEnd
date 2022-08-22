@@ -29,7 +29,6 @@ route.post("/nutrition/:id", nutritionController.updateNutrition);
 
 route.post("/lessons/create", lessonsController.LessonsCreate);
 
-route.patch("/homepage/update", homeController.updateHome);
 route.patch("/lesson/update/:id", lessonsController.updateLessons);
 
 
@@ -45,6 +44,7 @@ route.delete("/home/:id", homeController.deleteHomepage);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
 route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
+route.delete("/Lessons/deleteOne/:id", lessonsController.deletelessons);
 
 route.delete(
   "/user/:id",
@@ -52,6 +52,7 @@ route.delete(
   Validator.validateInput,
   UserController
 );
+
 
 
 export default route;
