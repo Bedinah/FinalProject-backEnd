@@ -39,8 +39,12 @@ route.delete("/nutrition/:id", nutritionController.deletenutrition);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
 route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
+
 route.get("/home/:id", homeController.getOnehomepage);
 route.get("/nutrition/:id", nutritionController.getOnenutrition);
+
+route.delete("/Lessons/deleteOne/:id", lessonsController.deletelessons);
+
 
 route.delete(
   "/user/:id",
@@ -48,5 +52,9 @@ route.delete(
   Validator.validateInput,
   UserController
 );
+
+
+
+
 
 export default route;
