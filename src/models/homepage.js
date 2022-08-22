@@ -7,11 +7,6 @@ const homepageSchema=new mongoose.Schema(
     title:String,
     discription:String,
     
-    role:{
-        type:String,
-        enum:["user","admin"],
-        default:admin,
-    },
     isActive:{
         type:Boolean,
         default:true,

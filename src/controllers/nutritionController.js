@@ -1,7 +1,5 @@
 import nutritionServices from "../services/nutritionServices";
-// import handlePassword from "../utils/handlePassword";
-// import TokenAuth from "../utils/Token";
- import Response from "../utils/response";
+import Response from "../utils/response";
 
 
 class nutritionController {
