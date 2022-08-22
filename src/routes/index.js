@@ -23,4 +23,10 @@ route.get("/user/getAll",UserController.getAll);
 route.get("/user/getOne/:id",UserController.getOneUser);
 route.delete("/user/:id" ,Validator.checkId(), Validator.validateInput,UserController);;
 
+//Homepages
+
+//Nutrition
+
+//lessons
+
 export default route;
