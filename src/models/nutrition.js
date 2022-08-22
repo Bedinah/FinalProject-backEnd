@@ -7,7 +7,6 @@ const NutritionSchema=new mongoose.Schema(
     picture:String,
     description:String,
     title2:String,
-    
     explanation:String,
     
     isActive:{

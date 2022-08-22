@@ -1,7 +1,5 @@
 import lessonsServices from "../services/lessonsServices";
-
-// import TokenAuth from "../utils/Token";
- import Response from "../utils/response";
+import Response from "../utils/response";
 
 
 class lessonsController {
