@@ -3,11 +3,24 @@ import nutritionModel from "../models/nutrition"
 class nutritionServices{
  
 //registering nutrition
-static async nutritionUpload(req){
- 
-    const nutrition = await nutritionModel.upload(req.body);
+
+static async createNutrition(req) {
+    const newNutrition = nutritionModel.create(req.body);
+
+    return newNutrition;
+  }
+
+static async updateNutrition(req) {
+    await nutritionModel.findOneAndUpdate({ _id: req.params.id }, req.body);
+    const nutrition = await nutritionModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
     return nutrition;
-}
+  }
 static async getAll(req){
 
     const nutrition = await nutritionModel.find();
