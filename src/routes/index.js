@@ -12,8 +12,7 @@ const route = Router();
 
 route.post("/user/login", UserController.loginUserController);
 
-route.post(
-  "/user/create",
+route.post( "/user/create",
 
   Validator.newAccountRules(),
   Validator.validateInput,
@@ -21,9 +20,11 @@ route.post(
   UserController.registerUser
 );
 
-route.post("/homepage/update", homeController.updateHome);
-route.post("/lesson/upload", lessonsController.Uploadlessons);
-route.post("/nutrition/upload", nutritionController.Uploadnutrition);
+route.post("/lessons/create", lessonsController.LessonsCreate);
+
+route.patch("/homepage/update", homeController.updateHome);
+route.patch("/lesson/update/:id", lessonsController.updateLessons);
+route.patch("/nutrition/upload", nutritionController.Uploadnutrition);
 
 route.get("/user/getAll", UserController.getAll);
 route.get("/nutrition/getAll", nutritionController.getAll);
@@ -31,6 +32,8 @@ route.get("/lesson/getAll", lessonsController.getAll);
 route.get("/home/getAll", homeController.getAll);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
+route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
+
 route.delete(
   "/user/:id",
   Validator.checkId(),
@@ -40,7 +43,7 @@ route.delete(
 
 
 route.get("/user/getOne/:id",UserController.getOneUser);
-route.delete("/user/:id" ,Validator.checkId(), Validator.validateInput,UserController);;
+route.delete("/user/:id" ,Validator.checkId(), Validator.validateInput,UserController);
 
 //Homepages
 
