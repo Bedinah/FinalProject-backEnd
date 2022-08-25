@@ -31,20 +31,22 @@ route.patch("/home/:id", homeController.updateHome);
 
 route.get("/user/getAll", UserController.getAll);
 route.get("/nutrition/getAll", nutritionController.getAll);
-route.get("/lesson/getAll", lessonsController.getAll);
+route.get(
+  "/lesson/getAll",
+  Verifytoken,
+  Verifyacess("user"),
+  lessonsController.getAll
+);
 route.get("/home/getAll", homeController.getAll);
 
 route.delete("/home/:id", homeController.deleteHomepage);
 route.delete("/nutrition/:id", nutritionController.deletenutrition);
+route.delete("/Lessons/deleteOne/:id", lessonsController.deletelessons);
 
 route.get("/user/getOne/:id", UserController.getOneUser);
 route.get("/Lessons/getOne/:id", lessonsController.getOnelessons);
-
 route.get("/home/:id", homeController.getOnehomepage);
 route.get("/nutrition/:id", nutritionController.getOnenutrition);
-
-route.delete("/Lessons/deleteOne/:id", lessonsController.deletelessons);
-
 
 route.delete(
   "/user/:id",
@@ -52,9 +54,5 @@ route.delete(
   Validator.validateInput,
   UserController
 );
-
-
-
-
 
 export default route;
