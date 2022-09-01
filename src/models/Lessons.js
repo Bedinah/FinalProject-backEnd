@@ -1,24 +1,26 @@
 import mongoose from "mongoose";
 
-const lessonsSchema=new mongoose.Schema(
-    {
-     title1: String,
+const lessonsSchema = new mongoose.Schema(
+  {
+    title1: String,
 
-     subheader:String,
+    subheader: String,
 
-     video:String,
+    video: String,
 
-     description:String,
+    description: String,
 
-     title2:String,
+    title2: String,
 
-     explanation:String,
-    isActive:{
-        type:Boolean,
-        default:true,
+    explanation: String,
+    isActive: {
+      type: Boolean,
+      default: true,
     },
-},{timestamps:true});
+  },
+  { timestamps: true }
+);
 
-const Lessons=mongoose.model("Lessons",lessonsSchema);
+const Lessons = mongoose.model("Lessons", lessonsSchema);
 
 export default Lessons;
